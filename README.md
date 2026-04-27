@@ -22,8 +22,9 @@ Submitted point clouds are evaluated by comparing each output `.ply` frame again
 - **Chamfer Distance** — Symmetric average nearest-neighbor distance between point clouds
 - **Accuracy** — Average distance from each point in the output to its nearest neighbor in the ground truth
 - **Completeness** — Average distance from each point in the ground truth to its nearest neighbor in the output
-- **Hausdorff Distance** — Maximum nearest-neighbor distance (worst-case error)
 - **Runtime** — Total processing time for all frames (in seconds)
+
+**NOTE** Metrics are subject to change; likely some additional metrics are added.
 
 ### Dataset Sequences
 
@@ -95,10 +96,10 @@ Results are ranked by **Chamfer Distance** (lower is better). All metrics are av
 
 ### Current Rankings
 
-| Rank | Team / Algorithm | Track | Chamfer Distance ↓ | Accuracy ↓ | Completeness ↓ | Hausdorff Distance ↓ | Runtime (s) |
-|------|-----------------|-------|--------------------:|-----------:|----------------:|----------------------:|------------:|
-| 1 | *Baseline* | Enhancement Only | — | — | — | — | — |
-| | | | | | | | |
+| Rank | Team / Algorithm | Track | Chamfer Distance ↓ | Accuracy ↓ | Completeness ↓ | Runtime (s) |
+|------|-----------------|-------|--------------------:|-----------:|----------------:|------------:|
+| 1 | *Baseline* | Enhancement Only | — | — | — | — |
+| | | | | | | |
 
 > **Note:** The ranking table will be updated as submissions are evaluated. Arrows (↓) indicate that lower values are better.
 
