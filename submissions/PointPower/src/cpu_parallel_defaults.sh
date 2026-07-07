@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# CPU shard defaults for Stage3 refine (source from run_enh_refine_sharded.sh).
+# Override: NUM_SHARDS=16 bash src/run_enh_refine_sharded.sh
+set -euo pipefail
+
+NPROC="${NPROC:-$(nproc 2>/dev/null || echo 8)}"
+RESERVE_CORES="${RESERVE_CORES:-1}"
+
+if [[ -z "${NUM_SHARDS:-}" ]]; then
+  NUM_SHARDS=$((NPROC - RESERVE_CORES))
+  [[ "$NUM_SHARDS" -lt 2 ]] && NUM_SHARDS=2
+  [[ "$NUM_SHARDS" -gt 32 ]] && NUM_SHARDS=32
+fi
+
+if [[ -z "${OMP_THREADS_PER_WORKER:-}" ]]; then
+  OMP_THREADS_PER_WORKER=$(( NPROC / NUM_SHARDS + 1 ))
+  [[ "$OMP_THREADS_PER_WORKER" -lt 1 ]] && OMP_THREADS_PER_WORKER=1
+  [[ "$OMP_THREADS_PER_WORKER" -gt 4 ]] && OMP_THREADS_PER_WORKER=4
+fi
+
+export NPROC NUM_SHARDS OMP_THREADS_PER_WORKER
+export OPENBLAS_NUM_THREADS="${OPENBLAS_THREADS_PER_WORKER:-$OMP_THREADS_PER_WORKER}"
+export OMP_NUM_THREADS="${OMP_THREADS_PER_WORKER}"
+export MKL_NUM_THREADS="${MKL_THREADS_PER_WORKER:-$OMP_THREADS_PER_WORKER}"
+export VECLIB_MAXIMUM_THREADS="${VECLIB_MAXIMUM_THREADS:-$OMP_THREADS_PER_WORKER}"
+export NUMEXPR_NUM_THREADS="${NUMEXPR_NUM_THREADS:-$OMP_THREADS_PER_WORKER}"

@@ -1,0 +1,156 @@
+{
+  "production_config": {
+    "name": "holefill_adaptive_frame_gate_v2",
+    "geometry": "hybrid_pdlts_superpc",
+    "geometry_dir": "",
+    "pre_sor": false,
+    "pre_sor_nb": 20,
+    "pre_sor_std": 2.5,
+    "snap_mm": 0.0,
+    "fill_mm": 0.25,
+    "post_sor": true,
+    "post_sor_nb": 20,
+    "post_sor_std": 2.5,
+    "blend_voxel_mm": 0.0,
+    "adaptive_route": false,
+    "temporal_window": 0,
+    "pdlts_model": "light",
+    "pdlts_cluster_size": 50000,
+    "geometry_fallback": "filter_cg",
+    "bidirectional_snap": false,
+    "cg_pull_mm": 1.0,
+    "fill_mode": "density_adaptive",
+    "fill_density_k": 6,
+    "fill_density_scale_max": 1.3,
+    "extra": {
+      "geometry_source": "pdlts_light",
+      "geometry_secondary": "superpc_submission",
+      "hybrid_fill_role": "secondary_only",
+      "hybrid_voxel_mm": 0.5,
+      "hybrid_fill_anchor": "primary",
+      "hybrid_hole_mask": "cg_holes",
+      "primary_density_refine": {
+        "snap_mm": 1.0,
+        "fill_mm": 0.6,
+        "fill_mode": "density_adaptive",
+        "fill_density_k": 6,
+        "fill_density_scale_max": 2.0
+      },
+      "fill_before_snap": true,
+      "hybrid_max_fill_ratio": 0.1,
+      "adaptive_post_sor": true,
+      "adaptive_post_sor_min_add_ratio": 0.02,
+      "frame_fill_gate": true,
+      "frame_fill_gate_skip_sequences": [],
+      "frame_fill_gate_probe_fill_mm": 0.25,
+      "frame_fill_gate_probe_scale_max": 1.3,
+      "frame_fill_gate_probe_max_ratio": 0.1,
+      "frame_fill_gate_probe_k": 6,
+      "frame_fill_gate_skip_add_ratio": 0.022,
+      "frame_fill_gate_full_add_ratio": 0.04,
+      "frame_fill_gate_k": 6,
+      "frame_fill_gate_tiers": {
+        "skip": {
+          "fill_mm": 0.0,
+          "post_sor": false
+        },
+        "lite": {
+          "fill_mm": 0.25,
+          "fill_density_scale_max": 1.3,
+          "hybrid_max_fill_ratio": 0.1,
+          "post_sor": false,
+          "adaptive_post_sor": true,
+          "adaptive_post_sor_min_add_ratio": 0.02
+        },
+        "full": {
+          "fill_mm": 0.6,
+          "fill_density_scale_max": 2.0,
+          "hybrid_max_fill_ratio": 0.15,
+          "post_sor": true,
+          "post_sor_std": 2.5,
+          "adaptive_post_sor": false
+        }
+      }
+    }
+  },
+  "best_config": {
+    "name": "holefill_adaptive_frame_gate_v2",
+    "geometry": "hybrid_pdlts_superpc",
+    "geometry_dir": "",
+    "pre_sor": false,
+    "pre_sor_nb": 20,
+    "pre_sor_std": 2.5,
+    "snap_mm": 0.0,
+    "fill_mm": 0.25,
+    "post_sor": true,
+    "post_sor_nb": 20,
+    "post_sor_std": 2.5,
+    "blend_voxel_mm": 0.0,
+    "adaptive_route": false,
+    "temporal_window": 0,
+    "pdlts_model": "light",
+    "pdlts_cluster_size": 50000,
+    "geometry_fallback": "filter_cg",
+    "bidirectional_snap": false,
+    "cg_pull_mm": 1.0,
+    "fill_mode": "density_adaptive",
+    "fill_density_k": 6,
+    "fill_density_scale_max": 1.3,
+    "extra": {
+      "geometry_source": "pdlts_light",
+      "geometry_secondary": "superpc_submission",
+      "hybrid_fill_role": "secondary_only",
+      "hybrid_voxel_mm": 0.5,
+      "hybrid_fill_anchor": "primary",
+      "hybrid_hole_mask": "cg_holes",
+      "primary_density_refine": {
+        "snap_mm": 1.0,
+        "fill_mm": 0.6,
+        "fill_mode": "density_adaptive",
+        "fill_density_k": 6,
+        "fill_density_scale_max": 2.0
+      },
+      "fill_before_snap": true,
+      "hybrid_max_fill_ratio": 0.1,
+      "adaptive_post_sor": true,
+      "adaptive_post_sor_min_add_ratio": 0.02,
+      "frame_fill_gate": true,
+      "frame_fill_gate_skip_sequences": [],
+      "frame_fill_gate_probe_fill_mm": 0.25,
+      "frame_fill_gate_probe_scale_max": 1.3,
+      "frame_fill_gate_probe_max_ratio": 0.1,
+      "frame_fill_gate_probe_k": 6,
+      "frame_fill_gate_skip_add_ratio": 0.022,
+      "frame_fill_gate_full_add_ratio": 0.04,
+      "frame_fill_gate_k": 6,
+      "frame_fill_gate_tiers": {
+        "skip": {
+          "fill_mm": 0.0,
+          "post_sor": false
+        },
+        "lite": {
+          "fill_mm": 0.25,
+          "fill_density_scale_max": 1.3,
+          "hybrid_max_fill_ratio": 0.1,
+          "post_sor": false,
+          "adaptive_post_sor": true,
+          "adaptive_post_sor_min_add_ratio": 0.02
+        },
+        "full": {
+          "fill_mm": 0.6,
+          "fill_density_scale_max": 2.0,
+          "hybrid_max_fill_ratio": 0.15,
+          "post_sor": true,
+          "post_sor_std": 2.5,
+          "adaptive_post_sor": false
+        }
+      }
+    }
+  },
+  "preset_name": "holefill_adaptive_frame_gate_v2",
+  "geometry_mode": "hybrid",
+  "geometry_primary": "pdlts_finetune_light",
+  "geometry_secondary": "superpc_blend_cg",
+  "val565_chamfer_mm": 14.8699,
+  "val565_chamfer_mm_ft_baseline": 14.8831
+}
